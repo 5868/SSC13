@@ -1,64 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SSC 2013 | Alumni Directory</title>
-<meta name="description" content="SSC 2013 batch alumni directory">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f3ee">
+<title>SSC ’13 — Alumni Directory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
-:root{--ink:#17191c;--muted:#73777d;--line:#e5e6e8;--paper:#f7f7f5;--accent:#e64b35;--white:#fff}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,'Hind Siliguri',sans-serif}
-.wrap{max-width:1120px;margin:auto;padding:28px 22px 60px}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}
-.brand{font-size:13px;font-weight:800;letter-spacing:.14em}.tag{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
-.hero{padding:64px 0 42px;display:grid;grid-template-columns:1.4fr .6fr;gap:24px;align-items:end}
-.kicker{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-h1{font-size:clamp(42px,7vw,82px);line-height:.98;letter-spacing:-.065em;margin:14px 0 18px;max-width:700px}
-.sub{color:var(--muted);font-family:'Hind Siliguri',sans-serif;font-size:17px}
-.count{text-align:right;border-left:1px solid var(--line);padding-left:25px}.count strong{font-size:54px;letter-spacing:-.06em;display:block}.count span{font-size:11px;letter-spacing:.13em;color:var(--muted)}
-.toolbar{display:grid;grid-template-columns:1fr 220px;gap:10px;margin:20px 0 12px}
-input,select,textarea,button{font:inherit}input,select,textarea{border:1px solid var(--line);border-radius:3px;background:#fff;padding:13px 14px;min-width:0}
-input:focus,select:focus,textarea:focus{outline:2px solid #17191c;outline-offset:1px}
-.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;padding:10px 0 16px}
-.tablebox{background:#fff;border:1px solid var(--line);overflow:auto}
-table{width:100%;border-collapse:collapse;min-width:650px}th{text-align:left;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:15px 16px;background:#fafafa;border-bottom:1px solid var(--line)}
-td{padding:15px 16px;border-bottom:1px solid #eee;font-size:14px}tbody tr:last-child td{border-bottom:0}.serial{color:#a0a2a5;font-variant-numeric:tabular-nums}.name{font-weight:600}.village{color:#666}.phone{color:#777}.actions{white-space:nowrap}.linkbtn{border:0;background:none;color:var(--accent);cursor:pointer;font-size:12px;padding:4px}
-button.primary{background:var(--ink);color:#fff;border:0;padding:12px 17px;border-radius:3px;cursor:pointer;font-weight:600}button.primary:hover{background:var(--accent)}
-.panel{margin-top:38px;padding:25px;background:#fff;border:1px solid var(--line)}.panel h2{font-size:22px;letter-spacing:-.04em;margin:0 0 8px}.panel p{color:var(--muted);font-size:13px;line-height:1.7}
-.admin{margin-top:22px;border-top:1px solid var(--line);padding-top:20px}.hidden{display:none!important}.gridform{display:grid;grid-template-columns:1fr 1fr;gap:10px}.gridform .full{grid-column:1/-1}.status{font-size:13px;margin:12px 0;color:var(--muted)}.request{border-top:1px solid var(--line);padding:14px 0;font-size:13px}.request button{margin:8px 6px 0 0}
-footer{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:50px;padding-top:18px;color:var(--muted);font-size:11px}
-@media(max-width:650px){.wrap{padding:18px 14px 40px}.hero{grid-template-columns:1fr;padding:42px 0 24px}.count{text-align:left;border-left:0;border-top:1px solid var(--line);padding:14px 0 0}.count strong{font-size:38px}.toolbar{grid-template-columns:1fr}.gridform{grid-template-columns:1fr}.gridform .full{grid-column:auto}footer{flex-direction:column}}
+:root{--paper:#f4f3ee;--ink:#171717;--muted:#77766f;--red:#e3342f;--line:#d9d7cf;--white:#fff;--green:#1d7651}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Hind Siliguri',sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:0 28px}.topline{height:8px;background:var(--red)}
+header{padding:24px 0 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{font:800 13px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase}.brand span{color:var(--red)}.edition{font-size:12px;color:var(--muted);letter-spacing:.08em}
+.hero{padding:54px 0 40px;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:end}
+.eyebrow{font:700 11px Inter,sans-serif;letter-spacing:.18em;color:var(--red);text-transform:uppercase}
+h1{font:900 clamp(54px,10vw,112px)/.88 Inter,sans-serif;letter-spacing:-.09em;margin:18px 0 20px}h1 span{color:var(--red)}
+.school{font-size:clamp(19px,2.5vw,27px);font-weight:600;line-height:1.35}.place{font-size:14px;color:var(--muted);margin-top:8px}
+.hero-note{border-left:3px solid var(--red);padding:4px 0 4px 18px;color:#55544f;font-size:15px;line-height:1.7;max-width:310px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);margin:4px 0 30px}
+.stat{padding:16px 18px 14px 0;border-right:1px solid var(--line)}.stat:not(:first-child){padding-left:18px}.stat:last-child{border:0}
+.num{font:800 28px Inter,sans-serif;letter-spacing:-.06em}.stat small{display:block;color:var(--muted);font-size:12px;margin-top:3px}
+.toolbar{display:flex;gap:10px;align-items:center;margin:24px 0 14px;flex-wrap:wrap}.search{flex:1;min-width:220px;position:relative}
+.search input{width:100%;padding:14px 16px 14px 42px;border:1px solid var(--line);background:var(--white);font:15px 'Hind Siliguri';outline:none;border-radius:0}
+.search:before{content:'⌕';position:absolute;left:15px;top:7px;font:28px Inter;color:var(--muted)}
+select,.btn{border:1px solid var(--ink);background:transparent;padding:13px 16px;font:600 14px 'Hind Siliguri';cursor:pointer;color:var(--ink);border-radius:0}
+.btn.primary{background:var(--ink);color:white}.btn.red{border-color:var(--red);color:var(--red)}.btn:disabled{opacity:.5;cursor:wait}
+.tablehead{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-top:2px solid var(--ink);font-size:12px;color:var(--muted)}
+.table-wrap{overflow-x:auto;background:var(--white);border-top:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:650px}th{text-align:left;background:#eeede7;font-size:12px;color:#68675f;font-weight:600;padding:13px 15px;letter-spacing:.04em}
+td{padding:12px 15px;border-top:1px solid #e9e7e0;font-size:14px}tr:hover td{background:#faf9f5}
+td:first-child{width:64px;color:#999;font:12px Inter}td:nth-child(2){font-weight:600}.phone{font:500 13px Inter,sans-serif;letter-spacing:.02em}.empty{color:#aaa;font-size:13px}
+.actions{display:flex;gap:7px;justify-content:flex-end}.iconbtn{width:30px;height:30px;border:1px solid var(--line);background:transparent;color:#777;cursor:pointer;font:17px Inter}.iconbtn:hover{border-color:var(--red);color:var(--red)}
+.addlink{border:0;background:none;color:var(--green);font:600 13px 'Hind Siliguri';cursor:pointer;padding:0}
+.footer{display:flex;justify-content:space-between;gap:20px;padding:25px 0 40px;margin-top:20px;border-top:1px solid var(--ink);font-size:12px;color:var(--muted)}
+.footer button{border:0;background:none;text-decoration:underline;color:var(--muted);cursor:pointer;font:inherit}
+.modal{display:none;position:fixed;inset:0;background:#1119;z-index:10;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}
+.panel{width:min(480px,100%);background:var(--paper);padding:25px;border-top:5px solid var(--red);max-height:90vh;overflow:auto}
+.panel h2{font:800 22px Inter;margin:0 0 5px;letter-spacing:-.04em}.sub{font-size:13px;color:var(--muted);margin-bottom:20px}
+label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}.panel input,.panel textarea,.panel select{width:100%;padding:12px;border:1px solid var(--line);background:white;font:15px 'Hind Siliguri';outline:none}
+.panel textarea{min-height:86px;resize:vertical}.modal-actions{display:flex;gap:8px;margin-top:18px}.modal-actions button{flex:1}
+.close{float:right;border:0;background:none;font-size:24px;cursor:pointer;color:#777}
+.notice{font-size:12px;color:var(--muted);line-height:1.6;margin-top:12px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;font-size:13px;display:none;z-index:20;max-width:90%;text-align:center}.toast.show{display:block}
+.admin-card{border:1px solid var(--line);padding:14px;margin:12px 0;background:white}.admin-card p{font-size:13px;margin:6px 0}.admin-card .decision{display:flex;gap:8px;margin-top:10px}.decision button{flex:1}.hidden{display:none!important}
+@media(max-width:700px){.wrap{padding:0 16px}header{padding:17px 0}.hero{padding:38px 0 28px;grid-template-columns:1fr;gap:18px}h1{font-size:68px}.hero-note{max-width:none}.stats{margin-bottom:22px}.stat{padding:12px 8px 12px 0}.stat:not(:first-child){padding-left:10px}.num{font-size:23px}.toolbar{gap:8px}.toolbar select{flex:1}.toolbar .btn{flex:1}.footer{flex-direction:column;gap:8px}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top"><div class="brand">SSC<span style="color:var(--accent)">/</span>2013</div><div class="tag">Alumni directory · Kellai</div></header>
-<section class="hero"><div><div class="kicker">One batch. Many stories.</div><h1>একসাথে ছিলাম,<br>একসাথেই থাকি।</h1><div class="sub">এস এস সি ২০১৩ ব্যাচ · মনসুর উদ্দিন বহুমুখী উচ্চ বিদ্যালয়, কেল্লাই</div></div><div class="count"><strong id="total">—</strong><span>REGISTERED ALUMNI</span></div></section>
-<div class="toolbar"><input id="search" placeholder="নাম, গ্রাম বা ক্রমিক দিয়ে খুঁজুন…" aria-label="Search"><select id="village"><option value="">সকল গ্রাম</option></select></div>
-<div class="meta"><span id="resultCount">তথ্য লোড হচ্ছে…</span><span>২০১৩ — FOREVER</span></div>
-<div class="tablebox"><table><thead><tr><th>ক্রমিক</th><th>নাম</th><th>গ্রাম</th><th>ফোন</th><th></th></tr></thead><tbody id="members"><tr><td colspan="5">তথ্য লোড হচ্ছে…</td></tr></tbody></table></div>
-<section class="panel"><h2>তথ্য হালনাগাদ</h2><p>নিজের ফোন নম্বর যোগ করতে সদস্যের পাশে “ফোন যোগ” নির্বাচন করুন। প্রকাশের আগে আপনার সম্মতি নেওয়া হবে এবং Admin অনুমোদন করবেন।</p><div class="admin"><button class="primary" id="adminToggle">Admin panel</button><div id="adminArea" class="hidden"><div class="gridform" style="margin-top:14px"><input id="pin" type="password" placeholder="Admin PIN"><button class="primary" id="loadRequests">Pending requests দেখুন</button></div><div id="adminStatus" class="status"></div><div id="requests"></div></div></div></section>
-<footer><span>SSC 2013 · Alumni Directory</span><span>Built for connection, not collection.</span></footer>
+<div class="topline"></div><div class="wrap">
+<header><div class="brand">ALUMNI <span>／</span> DIRECTORY</div><div class="edition">BATCH 2013 · KELLAI</div></header>
+<section class="hero"><div><div class="eyebrow">ONE BATCH · ONE COMMUNITY</div><h1>SSC <span>’13</span></h1>
+<div class="school">মনসুর উদ্দিন বহুমুখী উচ্চ বিদ্যালয়</div><div class="place">কেল্লাই · এস এস সি ২০১৩ ব্যাচ</div></div>
+<div class="hero-note">সময় বদলায়, ঠিকানা বদলায়—কিন্তু বন্ধুত্বের বন্ধন থেকে যায়। আমাদের ব্যাচের সবার সঙ্গে যোগাযোগের একটি সম্মিলিত ঠিকানা।</div></section>
+<section class="stats"><div class="stat"><div class="num" id="totalCount">—</div><small>তালিকাভুক্ত বন্ধু</small></div><div class="stat"><div class="num" id="phoneCount">—</div><small>ফোন নম্বর যুক্ত</small></div><div class="stat"><div class="num" id="villageCount">—</div><small>গ্রাম / এলাকা</small></div></section>
+<div class="toolbar"><div class="search"><input id="search" placeholder="নাম, গ্রাম বা ক্রমিক দিয়ে খুঁজুন..."></div><select id="villageFilter"><option value="">সব গ্রাম</option></select><button class="btn primary" id="addPhone">+ ফোন নম্বর যোগ / সংশোধন</button></div>
+<div class="tablehead"><span>ব্যাচ সদস্য তালিকা</span><span id="showing">তথ্য লোড হচ্ছে…</span></div>
+<div class="table-wrap"><table><thead><tr><th>নং</th><th>নাম</th><th>গ্রাম</th><th>ফোন নম্বর</th><th style="text-align:right">মন্তব্য / রিপোর্ট</th></tr></thead><tbody id="rows"><tr><td colspan="5">তথ্য লোড হচ্ছে...</td></tr></tbody></table></div>
+<div class="footer"><span>SSC 2013 · Monsoor Uddin বহুমুখী উচ্চ বিদ্যালয়, Kellai</span><span>Community maintained · <button id="adminOpen">Admin access</button></span></div>
 </div>
 
-<div id="modal" class="hidden" style="position:fixed;inset:0;background:#0008;display:grid;place-items:center;padding:18px;z-index:5"><div style="background:white;padding:24px;max-width:440px;width:100%;max-height:90vh;overflow:auto"><button id="closeModal" class="linkbtn" style="float:right">বন্ধ করুন ×</button><h2 id="modalTitle">তথ্য</h2><p id="modalMember" class="sub"></p><form id="memberForm"><div id="formFields"></div><button class="primary" style="margin-top:14px" type="submit">অনুরোধ জমা দিন</button></form><div id="formStatus" class="status"></div></div></div>
-<iframe name="apiFrame" id="apiFrame" class="hidden"></iframe>
+<div class="modal" id="modal"><div class="panel"><button class="close" id="closeModal">×</button><h2 id="modalTitle">তথ্য আপডেট</h2><div class="sub" id="modalSub">তথ্য যাচাইয়ের জন্য অনুরোধ জমা দিন।</div>
+<div id="studentChoice"><label>সদস্য নির্বাচন</label><select id="studentSelect"></select></div>
+<div id="phoneFields"><label>ফোন নম্বর</label><input id="phoneInput" inputmode="tel" placeholder="01XXXXXXXXX" maxlength="20"><label style="display:flex;align-items:center;gap:8px;font-weight:400"><input type="checkbox" id="consent" style="width:auto"> এই নম্বরটি প্রকাশে আমার সম্মতি আছে।</label></div>
+<div id="remarksField"><label id="remarksLabel">মন্তব্য / Remarks</label><textarea id="remarksInput" placeholder="প্রয়োজনীয় তথ্য বা কারণ লিখুন..."></textarea></div>
+<div class="modal-actions"><button class="btn" id="cancelModal">বাতিল</button><button class="btn primary" id="submitBtn">অনুরোধ জমা দিন</button></div>
+<div class="notice">আপনার পাঠানো তথ্য সরাসরি তালিকায় প্রকাশ হবে না। Admin যাচাই ও অনুমোদনের পর পরিবর্তন কার্যকর হবে। অন্যের ফোন নম্বর যোগ করার আগে তাঁর সম্মতি নিন।</div><div class="notice" id="formStatus" role="status"></div></div></div>
+
+<div class="modal" id="adminModal"><div class="panel"><button class="close" id="closeAdmin">×</button><h2>ADMIN REVIEW</h2><div class="sub">অনুমোদন ছাড়া কোনো পরিবর্তন কার্যকর হবে না।</div>
+<div id="adminLogin"><label>Admin PIN</label><input id="adminPin" type="password" placeholder="আপনার গোপন PIN"><div class="modal-actions"><button class="btn primary" id="loadRequests">প্রবেশ করুন</button></div></div><div id="requestList" class="hidden"></div><div id="adminStatus" class="notice"></div></div></div>
+<div class="toast" id="toast" role="status"></div><iframe name="apiFrame" id="apiFrame" class="hidden"></iframe>
+
 <script>
-const API_URL = 'https://script.google.com/macros/s/AKfycbyVZTrtyMfEufcvNnhWu3Rziu7a5ttpRfR6T1S4gZzAsUP4DDaD7kvziCQgyFpN7Nmj/exec';
-let allMembers = [], activeMember = null, currentFormType = '';
-const $ = id => document.getElementById(id);
+const API_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+let students=[], activeStudent=null, currentMode='phone', adminPin='';
+const $=id=>document.getElementById(id);
+const bn=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function jsonp(url){return new Promise((resolve,reject)=>{const cb='sscCb'+Date.now()+Math.random().toString(36).slice(2);const script=document.createElement('script');const timer=setTimeout(()=>{cleanup();reject(new Error('Backend response timeout'));},15000);function cleanup(){clearTimeout(timer);delete window[cb];script.remove();}window[cb]=data=>{cleanup();resolve(data);};script.onerror=()=>{cleanup();reject(new Error('Backend connection failed'));};script.src=url+(url.includes('?')?'&':'?')+'callback='+cb;document.body.appendChild(script);});}
-function post(data){return new Promise((resolve,reject)=>{const frame=$('apiFrame');const handler=e=>{if(e.data&&e.data.type==='SSC13_RESPONSE'){window.removeEventListener('message',handler);resolve(e.data.data);}};window.addEventListener('message',handler);const form=document.createElement('form');form.method='POST';form.action=API_URL;form.target='apiFrame';form.style.display='none';Object.entries(data).forEach(([k,v])=>{const i=document.createElement('input');i.name=k;i.value=v;form.appendChild(i);});document.body.appendChild(form);form.submit();form.remove();setTimeout(()=>{window.removeEventListener('message',handler);reject(new Error('Response পাওয়া যায়নি।'));},20000);});}
-async function loadMembers(){try{if(API_URL.includes('PASTE_'))throw new Error('প্রথমে index.html-এ Apps Script URL বসাতে হবে।');const data=await jsonp(API_URL+'?action=list');if(!data.success)throw new Error(data.message);allMembers=data.members||[];$('total').textContent=allMembers.length;const villages=[...new Set(allMembers.map(m=>m.village).filter(Boolean))].sort();$('village').innerHTML='<option value="">সকল গ্রাম</option>'+villages.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');render();}catch(e){$('members').innerHTML=`<tr><td colspan="5">${esc(e.message)}</td></tr>`;$('resultCount').textContent='তথ্য লোড হয়নি';}}
-function render(){const q=$('search').value.trim().toLowerCase(),v=$('village').value;const rows=allMembers.filter(m=>(!v||m.village===v)&&[m.serial,m.name,m.village].some(x=>String(x).toLowerCase().includes(q)));$('resultCount').textContent=`${rows.length} জন সদস্য পাওয়া গেছে`;$('members').innerHTML=rows.map(m=>`<tr><td class="serial">${esc(m.serial)}</td><td class="name">${esc(m.name)}</td><td class="village">${esc(m.village)}</td><td class="phone">${m.phone?esc(m.phone):'—'}</td><td class="actions"><button class="linkbtn" data-type="phone" data-serial="${esc(m.serial)}">ফোন যোগ</button><button class="linkbtn" data-type="remove" data-serial="${esc(m.serial)}">×</button></td></tr>`).join('')||'<tr><td colspan="5">কোনো সদস্য পাওয়া যায়নি।</td></tr>';}
-$('search').addEventListener('input',render);$('village').addEventListener('change',render);
-$('members').addEventListener('click',e=>{const b=e.target.closest('button[data-type]');if(!b)return;activeMember=allMembers.find(m=>m.serial===b.dataset.serial);openForm(b.dataset.type);});
-function openForm(type){currentFormType=type;$('modal').classList.remove('hidden');$('modalTitle').textContent=type==='phone'?'ফোন নম্বর যোগ করুন':'সদস্য বাদ দেওয়ার অনুরোধ';$('modalMember').textContent=`${activeMember.serial} · ${activeMember.name} · ${activeMember.village}`;$('formStatus').textContent='';$('formFields').innerHTML=type==='phone'?'<label>মোবাইল নম্বর</label><input name="phone" required placeholder="01XXXXXXXXX" style="width:100%;margin:7px 0 12px"><label style="display:block;font-size:13px"><input type="checkbox" name="consent" value="yes" required> আমার সম্মতিতে নম্বরটি ডিরেক্টরিতে প্রকাশ করা যাবে।</label>':'<label>কারণ / মন্তব্য</label><textarea name="reason" required maxlength="500" rows="4" style="width:100%;margin-top:8px" placeholder="কেন এই সদস্যের তথ্য যাচাই করা প্রয়োজন?"></textarea>';}
-$('closeModal').onclick=()=>$('modal').classList.add('hidden');
-$('memberForm').onsubmit=async e=>{e.preventDefault();const fd=new FormData(e.target),data={action:currentFormType==='phone'?'phoneRequest':'removalRequest',serial:activeMember.serial,name:activeMember.name};for(const [k,v] of fd.entries())data[k]=v;$('formStatus').textContent='জমা হচ্ছে…';try{const r=await post(data);$('formStatus').textContent=r.message;if(r.success)e.target.reset();}catch(err){$('formStatus').textContent=err.message;}};
-$('adminToggle').onclick=()=>$('adminArea').classList.toggle('hidden');
-$('loadRequests').onclick=async()=>{const pin=$('pin').value;if(!pin){$('adminStatus').textContent='Admin PIN দিন।';return;}$('adminStatus').textContent='লোড হচ্ছে…';try{const r=await post({action:'adminList',pin});if(!r.success)throw new Error(r.message);$('adminStatus').textContent=`${r.requests.length}টি Pending request`;$('requests').innerHTML=r.requests.map(x=>`<div class="request"><b>${esc(x.type)} · ${esc(x.name)} (#${esc(x.serial)})</b><div>${esc(x.phone||x.reason||'')}</div><div>${esc(x.time)}</div><button class="primary" data-decision="APPROVE" data-id="${esc(x.requestId)}">Approve</button><button class="primary" style="background:#777" data-decision="REJECT" data-id="${esc(x.requestId)}">Reject</button></div>`).join('')||'কোনো Pending request নেই।';}catch(e){$('adminStatus').textContent=e.message;}};
-$('requests').addEventListener('click',async e=>{const b=e.target.closest('button[data-decision]');if(!b)return;if(!confirm('এই সিদ্ধান্তটি নিশ্চিত করবেন?'))return;try{const r=await post({action:'adminDecision',pin:$('pin').value,requestId:b.dataset.id,decision:b.dataset.decision});$('adminStatus').textContent=r.message;if(r.success)$('loadRequests').click();}catch(err){$('adminStatus').textContent=err.message;}});
-loadMembers();
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),3800);}
+function jsonp(url){return new Promise((resolve,reject)=>{const cb='ssc13cb'+Date.now()+Math.random().toString(36).slice(2);const script=document.createElement('script');const timer=setTimeout(()=>{cleanup();reject(new Error('Backend response timeout'));},18000);function cleanup(){clearTimeout(timer);delete window[cb];script.remove();}window[cb]=data=>{cleanup();resolve(data);};script.onerror=()=>{cleanup();reject(new Error('Backend connection failed. URL ও deployment পরীক্ষা করুন।'));};script.src=url+(url.includes('?')?'&':'?')+'callback='+cb;document.body.appendChild(script);});}
+function post(data){return new Promise((resolve,reject)=>{const handler=e=>{if(e.data&&e.data.type==='SSC13_RESPONSE'){window.removeEventListener('message',handler);clearTimeout(timer);resolve(e.data.data);}};window.addEventListener('message',handler);const form=document.createElement('form');form.method='POST';form.action=API_URL;form.target='apiFrame';form.style.display='none';Object.entries(data).forEach(([k,v])=>{const i=document.createElement('input');i.name=k;i.value=String(v);form.appendChild(i);});document.body.appendChild(form);form.submit();form.remove();const timer=setTimeout(()=>{window.removeEventListener('message',handler);reject(new Error('Backend response পাওয়া যায়নি। আবার চেষ্টা করুন।'));},22000);});}
+async function loadData(){try{if(API_URL.includes('PASTE_'))throw new Error('index.html-এ Apps Script Web App URL বসানো হয়নি।');const data=await jsonp(API_URL+'?action=list');if(!data.success)throw new Error(data.message||'তথ্য লোড হয়নি।');students=(data.members||[]).map(m=>({id:String(m.serial),name:m.name,village:m.village||'',phone:m.phone||''}));populateFilters();render();}catch(e){$('rows').innerHTML=`<tr><td colspan="5" class="empty">${esc(e.message)}</td></tr>`;$('showing').textContent='তথ্য লোড হয়নি';}}
+function populateFilters(){const villages=[...new Set(students.map(s=>s.village).filter(Boolean))].sort();$('villageFilter').innerHTML='<option value="">সব গ্রাম</option>'+villages.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');$('studentSelect').innerHTML=students.map(s=>`<option value="${esc(s.id)}">${bn(s.id)}. ${esc(s.name)}${s.village?' — '+esc(s.village):''}</option>`).join('');}
+function render(){const q=$('search').value.trim().toLowerCase(),v=$('villageFilter').value;const filtered=students.filter(s=>(!v||s.village===v)&&(!q||[s.name,s.village,s.id,s.phone].join(' ').toLowerCase().includes(q)));$('rows').innerHTML=filtered.map(s=>`<tr><td>${bn(s.id)}</td><td>${esc(s.name)}</td><td>${esc(s.village||'—')}</td><td>${s.phone?`<span class="phone">${esc(s.phone)}</span> <button class="addlink" data-action="phone" data-id="${esc(s.id)}">সংশোধন</button>`:`<button class="addlink" data-action="phone" data-id="${esc(s.id)}">+ নম্বর যোগ করুন</button>`}</td><td><div class="actions"><button class="iconbtn" title="সংশোধন / মন্তব্য" data-action="correction" data-id="${esc(s.id)}">✎</button><button class="iconbtn" title="সদস্য নন / বাদ দেওয়ার অনুরোধ" data-action="remove" data-id="${esc(s.id)}">×</button></div></td></tr>`).join('')||'<tr><td colspan="5" class="empty">কোনো তথ্য পাওয়া যায়নি।</td></tr>';$('totalCount').textContent=bn(students.length);$('phoneCount').textContent=bn(students.filter(s=>s.phone).length);$('villageCount').textContent=bn(new Set(students.map(s=>s.village).filter(Boolean)).size);$('showing').textContent=bn(filtered.length)+' জন দেখানো হচ্ছে';}
+function openModal(mode,id){currentMode=mode;activeStudent=id?students.find(s=>s.id===String(id)):null;$('modal').classList.add('show');$('studentChoice').classList.toggle('hidden',!!id);if(id)$('studentSelect').value=String(id);$('phoneFields').classList.toggle('hidden',mode!=='phone');$('remarksField').classList.toggle('hidden',mode==='phone');$('phoneInput').value='';$('remarksInput').value='';$('consent').checked=false;$('formStatus').textContent='';const titles={phone:'ফোন নম্বর যোগ / সংশোধন',remove:'সদস্য বাদ দেওয়ার অনুরোধ',correction:'তথ্য সংশোধনের অনুরোধ'};$('modalTitle').textContent=titles[mode];$('remarksLabel').textContent=mode==='remove'?'বাদ দেওয়ার কারণ':'কী তথ্য সংশোধন করতে হবে?';$('modalSub').textContent=activeStudent?`${activeStudent.id} · ${activeStudent.name} · ${activeStudent.village}`:'সঠিক সদস্য নির্বাচন করুন।';}
+function selectedStudent(){return activeStudent||students.find(s=>s.id===$('studentSelect').value);}
+async function submitForm(){const s=selectedStudent();if(!s){toast('সদস্য নির্বাচন করুন।');return;}const data={serial:s.id,name:s.name};if(currentMode==='phone'){data.action='phoneRequest';data.phone=$('phoneInput').value.trim();data.consent=$('consent').checked?'yes':'no';if(!data.phone||!$('consent').checked){toast('ফোন নম্বর ও সম্মতি প্রয়োজন।');return;}}else{data.action=currentMode==='remove'?'removalRequest':'correctionRequest';data.reason=$('remarksInput').value.trim();if(!data.reason){toast('কারণ / সংশোধনের বিবরণ লিখুন।');return;}}$('submitBtn').disabled=true;$('formStatus').textContent='অনুরোধ জমা হচ্ছে…';try{const r=await post(data);$('formStatus').textContent=r.message||'';if(r.success){toast(r.message);setTimeout(closeModal,1200);}}catch(e){$('formStatus').textContent=e.message;}finally{$('submitBtn').disabled=false;}}
+function closeModal(){$('modal').classList.remove('show');}
+function openAdmin(){$('adminModal').classList.add('show');}
+function closeAdmin(){$('adminModal').classList.remove('show');}
+async function loadRequests(){adminPin=$('adminPin').value.trim();if(!adminPin){$('adminStatus').textContent='Admin PIN দিন।';return;}$('adminStatus').textContent='Request লোড হচ্ছে…';try{const r=await post({action:'adminList',pin:adminPin});if(!r.success)throw new Error(r.message);$('adminLogin').classList.add('hidden');$('requestList').classList.remove('hidden');$('requestList').innerHTML=(r.requests||[]).length?r.requests.map(x=>`<div class="admin-card"><strong>${esc(x.name)} · #${esc(x.serial)}</strong><p>ধরন: ${x.type==='PHONE'?'ফোন নম্বর':x.type==='REMOVAL'?'বাদ দেওয়ার অনুরোধ':'তথ্য সংশোধন'}</p>${x.phone?`<p>নম্বর: <b>${esc(x.phone)}</b></p>`:''}<p>বিবরণ: ${esc(x.reason||'—')}</p><p class="notice">${esc(x.time||'')}</p><div class="decision"><button class="btn primary" data-decision="APPROVE" data-id="${esc(x.requestId)}">Approve</button><button class="btn red" data-decision="REJECT" data-id="${esc(x.requestId)}">Reject</button></div></div>`).join(''):'<p>কোনো Pending request নেই।</p>';$('adminStatus').textContent=`${(r.requests||[]).length}টি Pending request`;}catch(e){$('adminStatus').textContent=e.message;}}
+async function review(id,decision){if(!confirm('এই সিদ্ধান্তটি নিশ্চিত করবেন?'))return;try{const r=await post({action:'adminDecision',pin:adminPin,requestId:id,decision});toast(r.message);if(r.success){await loadRequests();await loadData();}}catch(e){toast(e.message);}}
+$('search').addEventListener('input',render);$('villageFilter').addEventListener('change',render);
+$('rows').addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(b)openModal(b.dataset.action,b.dataset.id);});
+$('addPhone').addEventListener('click',()=>openModal('phone'));$('closeModal').addEventListener('click',closeModal);$('cancelModal').addEventListener('click',closeModal);$('submitBtn').addEventListener('click',submitForm);
+$('adminOpen').addEventListener('click',openAdmin);$('closeAdmin').addEventListener('click',closeAdmin);$('loadRequests').addEventListener('click',loadRequests);
+$('requestList').addEventListener('click',e=>{const b=e.target.closest('[data-decision]');if(b)review(b.dataset.id,b.dataset.decision);});
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeModal();});$('adminModal').addEventListener('click',e=>{if(e.target===$('adminModal'))closeAdmin();});
+loadData();
 </script>
 </body></html>
