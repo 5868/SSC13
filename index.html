@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SSC 2013 | Alumni Directory</title>
+<meta name="description" content="SSC 2013 batch alumni directory">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--ink:#17191c;--muted:#73777d;--line:#e5e6e8;--paper:#f7f7f5;--accent:#e64b35;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,'Hind Siliguri',sans-serif}
+.wrap{max-width:1120px;margin:auto;padding:28px 22px 60px}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}
+.brand{font-size:13px;font-weight:800;letter-spacing:.14em}.tag{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.hero{padding:64px 0 42px;display:grid;grid-template-columns:1.4fr .6fr;gap:24px;align-items:end}
+.kicker{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,82px);line-height:.98;letter-spacing:-.065em;margin:14px 0 18px;max-width:700px}
+.sub{color:var(--muted);font-family:'Hind Siliguri',sans-serif;font-size:17px}
+.count{text-align:right;border-left:1px solid var(--line);padding-left:25px}.count strong{font-size:54px;letter-spacing:-.06em;display:block}.count span{font-size:11px;letter-spacing:.13em;color:var(--muted)}
+.toolbar{display:grid;grid-template-columns:1fr 220px;gap:10px;margin:20px 0 12px}
+input,select,textarea,button{font:inherit}input,select,textarea{border:1px solid var(--line);border-radius:3px;background:#fff;padding:13px 14px;min-width:0}
+input:focus,select:focus,textarea:focus{outline:2px solid #17191c;outline-offset:1px}
+.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;padding:10px 0 16px}
+.tablebox{background:#fff;border:1px solid var(--line);overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:650px}th{text-align:left;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);padding:15px 16px;background:#fafafa;border-bottom:1px solid var(--line)}
+td{padding:15px 16px;border-bottom:1px solid #eee;font-size:14px}tbody tr:last-child td{border-bottom:0}.serial{color:#a0a2a5;font-variant-numeric:tabular-nums}.name{font-weight:600}.village{color:#666}.phone{color:#777}.actions{white-space:nowrap}.linkbtn{border:0;background:none;color:var(--accent);cursor:pointer;font-size:12px;padding:4px}
+button.primary{background:var(--ink);color:#fff;border:0;padding:12px 17px;border-radius:3px;cursor:pointer;font-weight:600}button.primary:hover{background:var(--accent)}
+.panel{margin-top:38px;padding:25px;background:#fff;border:1px solid var(--line)}.panel h2{font-size:22px;letter-spacing:-.04em;margin:0 0 8px}.panel p{color:var(--muted);font-size:13px;line-height:1.7}
+.admin{margin-top:22px;border-top:1px solid var(--line);padding-top:20px}.hidden{display:none!important}.gridform{display:grid;grid-template-columns:1fr 1fr;gap:10px}.gridform .full{grid-column:1/-1}.status{font-size:13px;margin:12px 0;color:var(--muted)}.request{border-top:1px solid var(--line);padding:14px 0;font-size:13px}.request button{margin:8px 6px 0 0}
+footer{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:50px;padding-top:18px;color:var(--muted);font-size:11px}
+@media(max-width:650px){.wrap{padding:18px 14px 40px}.hero{grid-template-columns:1fr;padding:42px 0 24px}.count{text-align:left;border-left:0;border-top:1px solid var(--line);padding:14px 0 0}.count strong{font-size:38px}.toolbar{grid-template-columns:1fr}.gridform{grid-template-columns:1fr}.gridform .full{grid-column:auto}footer{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">SSC<span style="color:var(--accent)">/</span>2013</div><div class="tag">Alumni directory · Kellai</div></header>
+<section class="hero"><div><div class="kicker">One batch. Many stories.</div><h1>একসাথে ছিলাম,<br>একসাথেই থাকি।</h1><div class="sub">এস এস সি ২০১৩ ব্যাচ · মনসুর উদ্দিন বহুমুখী উচ্চ বিদ্যালয়, কেল্লাই</div></div><div class="count"><strong id="total">—</strong><span>REGISTERED ALUMNI</span></div></section>
+<div class="toolbar"><input id="search" placeholder="নাম, গ্রাম বা ক্রমিক দিয়ে খুঁজুন…" aria-label="Search"><select id="village"><option value="">সকল গ্রাম</option></select></div>
+<div class="meta"><span id="resultCount">তথ্য লোড হচ্ছে…</span><span>২০১৩ — FOREVER</span></div>
+<div class="tablebox"><table><thead><tr><th>ক্রমিক</th><th>নাম</th><th>গ্রাম</th><th>ফোন</th><th></th></tr></thead><tbody id="members"><tr><td colspan="5">তথ্য লোড হচ্ছে…</td></tr></tbody></table></div>
+<section class="panel"><h2>তথ্য হালনাগাদ</h2><p>নিজের ফোন নম্বর যোগ করতে সদস্যের পাশে “ফোন যোগ” নির্বাচন করুন। প্রকাশের আগে আপনার সম্মতি নেওয়া হবে এবং Admin অনুমোদন করবেন।</p><div class="admin"><button class="primary" id="adminToggle">Admin panel</button><div id="adminArea" class="hidden"><div class="gridform" style="margin-top:14px"><input id="pin" type="password" placeholder="Admin PIN"><button class="primary" id="loadRequests">Pending requests দেখুন</button></div><div id="adminStatus" class="status"></div><div id="requests"></div></div></div></section>
+<footer><span>SSC 2013 · Alumni Directory</span><span>Built for connection, not collection.</span></footer>
+</div>
+
+<div id="modal" class="hidden" style="position:fixed;inset:0;background:#0008;display:grid;place-items:center;padding:18px;z-index:5"><div style="background:white;padding:24px;max-width:440px;width:100%;max-height:90vh;overflow:auto"><button id="closeModal" class="linkbtn" style="float:right">বন্ধ করুন ×</button><h2 id="modalTitle">তথ্য</h2><p id="modalMember" class="sub"></p><form id="memberForm"><div id="formFields"></div><button class="primary" style="margin-top:14px" type="submit">অনুরোধ জমা দিন</button></form><div id="formStatus" class="status"></div></div></div>
+<iframe name="apiFrame" id="apiFrame" class="hidden"></iframe>
+<script>
+const API_URL = 'https://script.google.com/macros/s/AKfycbyVZTrtyMfEufcvNnhWu3Rziu7a5ttpRfR6T1S4gZzAsUP4DDaD7kvziCQgyFpN7Nmj/exec';
+let allMembers = [], activeMember = null, currentFormType = '';
+const $ = id => document.getElementById(id);
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function jsonp(url){return new Promise((resolve,reject)=>{const cb='sscCb'+Date.now()+Math.random().toString(36).slice(2);const script=document.createElement('script');const timer=setTimeout(()=>{cleanup();reject(new Error('Backend response timeout'));},15000);function cleanup(){clearTimeout(timer);delete window[cb];script.remove();}window[cb]=data=>{cleanup();resolve(data);};script.onerror=()=>{cleanup();reject(new Error('Backend connection failed'));};script.src=url+(url.includes('?')?'&':'?')+'callback='+cb;document.body.appendChild(script);});}
+function post(data){return new Promise((resolve,reject)=>{const frame=$('apiFrame');const handler=e=>{if(e.data&&e.data.type==='SSC13_RESPONSE'){window.removeEventListener('message',handler);resolve(e.data.data);}};window.addEventListener('message',handler);const form=document.createElement('form');form.method='POST';form.action=API_URL;form.target='apiFrame';form.style.display='none';Object.entries(data).forEach(([k,v])=>{const i=document.createElement('input');i.name=k;i.value=v;form.appendChild(i);});document.body.appendChild(form);form.submit();form.remove();setTimeout(()=>{window.removeEventListener('message',handler);reject(new Error('Response পাওয়া যায়নি।'));},20000);});}
+async function loadMembers(){try{if(API_URL.includes('PASTE_'))throw new Error('প্রথমে index.html-এ Apps Script URL বসাতে হবে।');const data=await jsonp(API_URL+'?action=list');if(!data.success)throw new Error(data.message);allMembers=data.members||[];$('total').textContent=allMembers.length;const villages=[...new Set(allMembers.map(m=>m.village).filter(Boolean))].sort();$('village').innerHTML='<option value="">সকল গ্রাম</option>'+villages.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');render();}catch(e){$('members').innerHTML=`<tr><td colspan="5">${esc(e.message)}</td></tr>`;$('resultCount').textContent='তথ্য লোড হয়নি';}}
+function render(){const q=$('search').value.trim().toLowerCase(),v=$('village').value;const rows=allMembers.filter(m=>(!v||m.village===v)&&[m.serial,m.name,m.village].some(x=>String(x).toLowerCase().includes(q)));$('resultCount').textContent=`${rows.length} জন সদস্য পাওয়া গেছে`;$('members').innerHTML=rows.map(m=>`<tr><td class="serial">${esc(m.serial)}</td><td class="name">${esc(m.name)}</td><td class="village">${esc(m.village)}</td><td class="phone">${m.phone?esc(m.phone):'—'}</td><td class="actions"><button class="linkbtn" data-type="phone" data-serial="${esc(m.serial)}">ফোন যোগ</button><button class="linkbtn" data-type="remove" data-serial="${esc(m.serial)}">×</button></td></tr>`).join('')||'<tr><td colspan="5">কোনো সদস্য পাওয়া যায়নি।</td></tr>';}
+$('search').addEventListener('input',render);$('village').addEventListener('change',render);
+$('members').addEventListener('click',e=>{const b=e.target.closest('button[data-type]');if(!b)return;activeMember=allMembers.find(m=>m.serial===b.dataset.serial);openForm(b.dataset.type);});
+function openForm(type){currentFormType=type;$('modal').classList.remove('hidden');$('modalTitle').textContent=type==='phone'?'ফোন নম্বর যোগ করুন':'সদস্য বাদ দেওয়ার অনুরোধ';$('modalMember').textContent=`${activeMember.serial} · ${activeMember.name} · ${activeMember.village}`;$('formStatus').textContent='';$('formFields').innerHTML=type==='phone'?'<label>মোবাইল নম্বর</label><input name="phone" required placeholder="01XXXXXXXXX" style="width:100%;margin:7px 0 12px"><label style="display:block;font-size:13px"><input type="checkbox" name="consent" value="yes" required> আমার সম্মতিতে নম্বরটি ডিরেক্টরিতে প্রকাশ করা যাবে।</label>':'<label>কারণ / মন্তব্য</label><textarea name="reason" required maxlength="500" rows="4" style="width:100%;margin-top:8px" placeholder="কেন এই সদস্যের তথ্য যাচাই করা প্রয়োজন?"></textarea>';}
+$('closeModal').onclick=()=>$('modal').classList.add('hidden');
+$('memberForm').onsubmit=async e=>{e.preventDefault();const fd=new FormData(e.target),data={action:currentFormType==='phone'?'phoneRequest':'removalRequest',serial:activeMember.serial,name:activeMember.name};for(const [k,v] of fd.entries())data[k]=v;$('formStatus').textContent='জমা হচ্ছে…';try{const r=await post(data);$('formStatus').textContent=r.message;if(r.success)e.target.reset();}catch(err){$('formStatus').textContent=err.message;}};
+$('adminToggle').onclick=()=>$('adminArea').classList.toggle('hidden');
+$('loadRequests').onclick=async()=>{const pin=$('pin').value;if(!pin){$('adminStatus').textContent='Admin PIN দিন।';return;}$('adminStatus').textContent='লোড হচ্ছে…';try{const r=await post({action:'adminList',pin});if(!r.success)throw new Error(r.message);$('adminStatus').textContent=`${r.requests.length}টি Pending request`;$('requests').innerHTML=r.requests.map(x=>`<div class="request"><b>${esc(x.type)} · ${esc(x.name)} (#${esc(x.serial)})</b><div>${esc(x.phone||x.reason||'')}</div><div>${esc(x.time)}</div><button class="primary" data-decision="APPROVE" data-id="${esc(x.requestId)}">Approve</button><button class="primary" style="background:#777" data-decision="REJECT" data-id="${esc(x.requestId)}">Reject</button></div>`).join('')||'কোনো Pending request নেই।';}catch(e){$('adminStatus').textContent=e.message;}};
+$('requests').addEventListener('click',async e=>{const b=e.target.closest('button[data-decision]');if(!b)return;if(!confirm('এই সিদ্ধান্তটি নিশ্চিত করবেন?'))return;try{const r=await post({action:'adminDecision',pin:$('pin').value,requestId:b.dataset.id,decision:b.dataset.decision});$('adminStatus').textContent=r.message;if(r.success)$('loadRequests').click();}catch(err){$('adminStatus').textContent=err.message;}});
+loadMembers();
+</script>
+</body></html>
