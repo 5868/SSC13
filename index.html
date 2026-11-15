@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#f4f3ee">
 <title>SSC ’13 — Alumni Directory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--paper:#f4f3ee;--ink:#171717;--muted:#77766f;--red:#e3342f;--line:#d9d7cf;--white:#fff;--green:#1d7651}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Hind Siliguri',sans-serif}
@@ -75,14 +75,52 @@ label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}.panel inpu
  .edit-fields .field-wide{grid-column:auto}
 }
 
+
+/* Version 5: refined typography and cinematic Manikganj hero */
+.num,.stat small,td:first-child,#showing,.place{font-family:'Noto Sans Bengali','Hind Siliguri',sans-serif;font-variant-numeric:tabular-nums}
+.contact-links a,.phone-number,.edition,.brand,.eyebrow,h1,.panel h2{font-variant-numeric:tabular-nums}
+.hero-cinematic{
+  position:relative;isolation:isolate;overflow:hidden;min-height:clamp(430px,56vw,680px);
+  width:100vw;max-width:none;margin-left:calc((100% - 100vw)/2);
+  padding:clamp(54px,8vw,108px) clamp(28px,7vw,100px) 64px;
+  display:flex;align-items:flex-end;background:#173a2e;color:#fff;
+}
+.hero-cinematic:before{content:"";position:absolute;inset:0;z-index:-2;background:#214d3a url('assets/manikganj-hero-poster.svg') center/cover no-repeat}
+.hero-cinematic:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,22,17,.78),rgba(7,22,17,.34) 58%,rgba(7,22,17,.18)),linear-gradient(0deg,rgba(4,15,11,.58),transparent 60%)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero-cinematic .hero-content{max-width:850px;position:relative}
+.hero-cinematic .eyebrow{color:#e8c98b;letter-spacing:.16em}
+.hero-cinematic h1{font:800 clamp(32px,5.2vw,66px)/1.2 'Hind Siliguri',sans-serif;letter-spacing:0;margin:14px 0 8px;color:#fff}
+.hero-cinematic h1 span{color:#e8c98b}
+.hero-cinematic .hero-subtitle{font:500 clamp(17px,2vw,23px)/1.5 'Hind Siliguri',sans-serif;color:rgba(255,255,255,.92);margin:0}
+.hero-cinematic .hero-caption{font:600 11px Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#e8c98b;margin-top:22px}
+.hero-cinematic .hero-note{max-width:480px;margin-top:24px;border-left-color:#e8c98b;color:rgba(255,255,255,.84);font-size:15px}
+.hero-cinematic .hero-credit{position:absolute;right:24px;bottom:18px;font:500 10px Inter,sans-serif;letter-spacing:.08em;color:rgba(255,255,255,.75)}
+.video-unavailable .hero-video{display:none}
+@media(max-width:700px){
+ .hero-cinematic{width:100vw;margin-left:calc((100% - 100vw)/2);min-height:480px;padding:56px 22px 58px}
+ .hero-cinematic:after{background:linear-gradient(0deg,rgba(4,15,11,.76),rgba(7,22,17,.3))}
+ .hero-cinematic .hero-note{max-width:100%;font-size:14px}
+ .hero-cinematic .hero-credit{right:14px;bottom:12px;font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.hero-video{display:none!important}}
+
 </style>
 </head>
 <body>
 <div class="topline"></div><div class="wrap">
 <header><div class="brand">ALUMNI <span>／</span> DIRECTORY</div><div class="edition">BATCH 2013 · KELLAI</div></header>
-<section class="hero"><div><div class="eyebrow">ONE BATCH · ONE COMMUNITY</div><h1>SSC <span>’13</span></h1>
-<div class="school">মনসুর উদ্দিন বহুমুখী উচ্চ বিদ্যালয়</div><div class="place">কেল্লাই · এস এস সি ২০১৩ ব্যাচ</div></div>
-<div class="hero-note">সময় বদলায়, ঠিকানা বদলায়—কিন্তু বন্ধুত্বের বন্ধন থেকে যায়। আমাদের ব্যাচের সবার সঙ্গে যোগাযোগের একটি সম্মিলিত ঠিকানা।</div></section>
+<section class="hero hero-cinematic" id="homeHero" aria-label="আমাদের শেকড়, আমাদের মানিকগঞ্জ">
+<video class="hero-video" id="heroVideo" muted autoplay loop playsinline preload="none" poster="assets/manikganj-hero-poster.svg" aria-hidden="true"></video>
+<div class="hero-content">
+<div class="eyebrow">ONE BATCH · ONE COMMUNITY</div>
+<h1>আমাদের শেকড়, আমাদের <span>মানিকগঞ্জ</span></h1>
+<p class="hero-subtitle">স্মৃতির বন্ধনে, একসাথে আবার।</p>
+<div class="hero-caption">Our Roots. Our Memories. Our Manikganj.</div>
+<div class="hero-note">সময় বদলায়, ঠিকানা বদলায়—কিন্তু বন্ধুত্বের বন্ধন থেকে যায়। আমাদের ব্যাচের সবার সঙ্গে যোগাযোগের একটি সম্মিলিত ঠিকানা।</div>
+</div>
+<div class="hero-credit">MANIKGANJ · BANGLADESH</div>
+</section>
 <section class="stats"><div class="stat"><div class="num" id="totalCount">—</div><small>তালিকাভুক্ত বন্ধু</small></div><div class="stat"><div class="num" id="phoneCount">—</div><small>ফোন নম্বর যুক্ত</small></div><div class="stat"><div class="num" id="villageCount">—</div><small>গ্রাম / এলাকা</small></div></section>
 <div class="toolbar"><div class="search"><input id="search" placeholder="নাম, গ্রাম বা ক্রমিক দিয়ে খুঁজুন..."></div><select id="villageFilter"><option value="">সব গ্রাম</option></select><button class="btn primary" id="addPhone">+ ফোন নম্বর যোগ করুন</button></div>
 <div class="tablehead"><span>ব্যাচ সদস্য তালিকা</span><span id="showing">তথ্য লোড হচ্ছে…</span></div>
@@ -107,28 +145,51 @@ const API_URL = "https://script.google.com/macros/s/AKfycbyVZTrtyMfEufcvNnhWu3Rz
 let students=[], activeStudent=null, currentMode='phone', adminPin='';
 const $=id=>document.getElementById(id);
 const bn=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]);
+// Accept local (017...), +880..., and 880... forms; always return canonical 8801XXXXXXXXX.
+function normalizeBdPhone(value){
+  let digits=String(value??'').replace(/[০-৯]/g,d=>'০১২৩৪৫৬৭৮৯'.indexOf(d)).replace(/\D/g,'');
+  if(digits.startsWith('00880'))digits=digits.slice(5);
+  else if(digits.startsWith('880'))digits=digits.slice(3);
+  if(/^1[3-9]\d{8}$/.test(digits))digits='0'+digits;
+  if(!/^01[3-9]\d{8}$/.test(digits))return '';
+  return '880'+digits.slice(1);
+}
+function initHeroVideo(){
+  const video=$('heroVideo'),hero=$('homeHero');
+  if(!video||!hero)return;
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const saveData=navigator.connection&&navigator.connection.saveData;
+  if(reduce||saveData){hero.classList.add('video-unavailable');return;}
+  video.src='assets/manikganj-hero.mp4';
+  video.addEventListener('error',()=>hero.classList.add('video-unavailable'),{once:true});
+  const play=video.play();if(play&&play.catch)play.catch(()=>hero.classList.add('video-unavailable'));
+}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),3800);}
 function jsonp(url){return new Promise((resolve,reject)=>{const cb='ssc13cb'+Date.now()+Math.random().toString(36).slice(2);const script=document.createElement('script');const timer=setTimeout(()=>{cleanup();reject(new Error('Backend response timeout'));},18000);function cleanup(){clearTimeout(timer);delete window[cb];script.remove();}window[cb]=data=>{cleanup();resolve(data);};script.onerror=()=>{cleanup();reject(new Error('Backend connection failed. URL ও deployment পরীক্ষা করুন।'));};script.src=url+(url.includes('?')?'&':'?')+'callback='+cb;document.body.appendChild(script);});}
 function post(data){return new Promise((resolve,reject)=>{const handler=e=>{if(e.data&&e.data.type==='SSC13_RESPONSE'){window.removeEventListener('message',handler);clearTimeout(timer);resolve(e.data.data);}};window.addEventListener('message',handler);const form=document.createElement('form');form.method='POST';form.action=API_URL;form.target='apiFrame';form.style.display='none';Object.entries(data).forEach(([k,v])=>{const i=document.createElement('input');i.name=k;i.value=(v&&typeof v==='object')?JSON.stringify(v):String(v);form.appendChild(i);});document.body.appendChild(form);form.submit();form.remove();const timer=setTimeout(()=>{window.removeEventListener('message',handler);reject(new Error('Backend response পাওয়া যায়নি। আবার চেষ্টা করুন।'));},22000);});}
 async function loadData(){try{if(API_URL.includes('PASTE_'))throw new Error('index.html-এ Apps Script Web App URL বসানো হয়নি।');const data=await jsonp(API_URL+'?action=list');if(!data.success)throw new Error(data.message||'তথ্য লোড হয়নি।');students=(data.members||[]).map(m=>({id:String(m.serial),name:m.name,village:m.village||'',phone:m.phone||'',fields:m.fields||{}}));window.pendingRemoval=new Set((data.pendingRemoval||[]).map(String));populateFilters();render();}catch(e){$('rows').innerHTML=`<tr><td colspan="5" class="empty">${esc(e.message)}</td></tr>`;$('showing').textContent='তথ্য লোড হয়নি';}}
 function populateFilters(){const villages=[...new Set(students.map(s=>s.village).filter(Boolean))].sort();$('villageFilter').innerHTML='<option value="">সব গ্রাম</option>'+villages.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');$('studentSelect').innerHTML=students.map(s=>`<option value="${esc(s.id)}">${bn(s.id)}. ${esc(s.name)}${s.village?' — '+esc(s.village):''}</option>`).join('');}
-function render(){const q=$('search').value.trim().toLowerCase(),v=$('villageFilter').value;const filtered=students.filter(s=>(!v||s.village===v)&&(!q||[s.name,s.village,s.id,s.phone].join(' ').toLowerCase().includes(q)));$('rows').innerHTML=filtered.map(s=>{const pending=window.pendingRemoval&&window.pendingRemoval.has(String(s.id));const phone=s.phone?`<div class="contact-links"><a href="tel:${esc(s.phone.replace(/[^\d+]/g,''))}" aria-label="কল করুন ${esc(s.name)}">☎ ${esc(s.phone)}</a><a class="wa" href="https://wa.me/${esc(s.phone.replace(/\D/g,'').replace(/^0/,'88'))}" target="_blank" rel="noopener">WhatsApp ↗</a></div>`:`<button class="addlink" data-action="phone" data-id="${esc(s.id)}">+ নম্বর যোগ করুন</button>`;return `<tr class="${pending?'row-pending':''}"><td data-label="নং">${bn(s.id)}</td><td data-label="নাম">${esc(s.name)}</td><td data-label="গ্রাম">${esc(s.village||'—')}</td><td data-label="ফোন নম্বর">${phone}</td><td data-label="মন্তব্য / রিপোর্ট"><div class="actions"><button class="iconbtn" title="সকল তথ্য সংশোধন" data-action="correction" data-id="${esc(s.id)}" ${pending?'disabled':''}>✎</button><button class="iconbtn" title="তথ্য বাদ দেওয়ার অনুরোধ" data-action="remove" data-id="${esc(s.id)}" ${pending?'disabled':''}>×</button></div></td></tr>`;}).join('')||'<tr><td colspan="5" class="empty">কোনো তথ্য পাওয়া যায়নি।</td></tr>';$('totalCount').textContent=bn(students.length);$('phoneCount').textContent=bn(students.filter(s=>s.phone).length);$('villageCount').textContent=bn(new Set(students.map(s=>s.village).filter(Boolean)).size);$('showing').textContent=bn(filtered.length)+' জন দেখানো হচ্ছে';}
+function render(){const q=$('search').value.trim().toLowerCase(),v=$('villageFilter').value;const filtered=students.filter(s=>(!v||s.village===v)&&(!q||[s.name,s.village,s.id,s.phone].join(' ').toLowerCase().includes(q)));$('rows').innerHTML=filtered.map(s=>{const pending=window.pendingRemoval&&window.pendingRemoval.has(String(s.id));const normalizedPhone=s.phone?normalizeBdPhone(s.phone):'';
+const phone=s.phone?(normalizedPhone?`<div class="contact-links"><a class="phone-number" href="tel:+${normalizedPhone}" aria-label="কল করুন ${esc(s.name)}">☎ ${esc(s.phone)}</a><a class="wa" href="https://wa.me/${normalizedPhone}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp-এ যোগাযোগ করুন ${esc(s.name)}">WhatsApp ↗</a></div>`:`<span class="phone-number">${esc(s.phone)}</span>`):`<button class="addlink" data-action="phone" data-id="${esc(s.id)}">+ নম্বর যোগ করুন</button>`;return `<tr class="${pending?'row-pending':''}"><td data-label="নং">${bn(s.id)}</td><td data-label="নাম">${esc(s.name)}</td><td data-label="গ্রাম">${esc(s.village||'—')}</td><td data-label="ফোন নম্বর">${phone}</td><td data-label="মন্তব্য / রিপোর্ট"><div class="actions"><button class="iconbtn" title="সকল তথ্য সংশোধন" data-action="correction" data-id="${esc(s.id)}" ${pending?'disabled':''}>✎</button><button class="iconbtn" title="তথ্য বাদ দেওয়ার অনুরোধ" data-action="remove" data-id="${esc(s.id)}" ${pending?'disabled':''}>×</button></div></td></tr>`;}).join('')||'<tr><td colspan="5" class="empty">কোনো তথ্য পাওয়া যায়নি।</td></tr>';$('totalCount').textContent=bn(students.length);$('phoneCount').textContent=bn(students.filter(s=>s.phone).length);$('villageCount').textContent=bn(new Set(students.map(s=>s.village).filter(Boolean)).size);$('showing').textContent=bn(filtered.length)+' জন দেখানো হচ্ছে';}
 function openModal(mode,id){currentMode=mode;activeStudent=id?students.find(s=>s.id===String(id)):null;$('modal').classList.add('show');$('studentChoice').classList.toggle('hidden',!!id);if(id)$('studentSelect').value=String(id);$('phoneFields').classList.toggle('hidden',mode!=='phone');$('editFields').classList.toggle('hidden',mode!=='correction');$('remarksField').classList.toggle('hidden',mode!=='remove');$('phoneInput').value='';$('remarksInput').value='';$('consent').checked=false;$('formStatus').textContent='';const titles={phone:'ফোন নম্বর যোগ করুন',remove:'সদস্য বাদ দেওয়ার অনুরোধ',correction:'সকল তথ্য সংশোধন'};$('modalTitle').textContent=titles[mode];$('submitBtn').textContent=mode==='phone'?'সরাসরি যুক্ত করুন':mode==='correction'?'সংশোধনের অনুরোধ পাঠান':'বাদ দেওয়ার অনুরোধ পাঠান';$('modalSub').textContent=activeStudent?`${activeStudent.id} · ${activeStudent.name} · ${activeStudent.village}`:'সঠিক সদস্য নির্বাচন করুন।';if(mode==='correction'&&activeStudent){const fields=activeStudent.fields||{};const keys=Object.keys(fields).filter(k=>k!=='ক্রমিক');$('editFields').innerHTML=keys.map(k=>`<div class="${String(fields[k]).length>55?'field-wide':''}"><label>${esc(k)}</label><input data-edit-key="${esc(k)}" value="${esc(fields[k])}" ${k==='ফোন'?'inputmode="tel"':''}></div>`).join('');$('remarksLabel').textContent='';}else if(mode==='remove'){$('remarksLabel').textContent='কারণ (ঐচ্ছিক)';$('remarksInput').value='এই সদস্যের তথ্য তালিকা থেকে বাদ দেওয়ার অনুরোধ।';}}
 function selectedStudent(){return activeStudent||students.find(s=>s.id===$('studentSelect').value);}
-async function submitForm(){const s=selectedStudent();if(!s){toast('সদস্য নির্বাচন করুন।');return;}const data={serial:s.id,name:s.name};if(currentMode==='phone'){data.action='phoneRequest';data.phone=$('phoneInput').value.trim();data.consent=$('consent').checked?'yes':'no';if(!data.phone||!$('consent').checked){toast('ফোন নম্বর ও সম্মতি প্রয়োজন।');return;}}else if(currentMode==='correction'){data.action='editRequest';data.changes={};$('editFields').querySelectorAll('[data-edit-key]').forEach(el=>data.changes[el.dataset.editKey]=el.value.trim());if(!Object.keys(data.changes).length){toast('সংশোধনের মতো কোনো তথ্য পাওয়া যায়নি।');return;}}else{data.action='removalRequest';data.reason=$('remarksInput').value.trim()||'এই সদস্যের তথ্য তালিকা থেকে বাদ দেওয়ার অনুরোধ।';} $('submitBtn').disabled=true;$('formStatus').textContent=currentMode==='phone'?'ফোন নম্বর যুক্ত হচ্ছে…':'অনুরোধ জমা হচ্ছে…';try{const r=await post(data);$('formStatus').textContent=r.message||'';if(r.success){toast(r.message);if(currentMode==='phone'){await loadData();}setTimeout(closeModal,900);}}catch(e){$('formStatus').textContent=e.message;}finally{$('submitBtn').disabled=false;}}
+async function submitForm(){const s=selectedStudent();if(!s){toast('সদস্য নির্বাচন করুন।');return;}const data={serial:s.id,name:s.name};if(currentMode==='phone'){data.action='phoneRequest';data.phone=$('phoneInput').value.trim();data.consent=$('consent').checked?'yes':'no';if(!data.phone||!$('consent').checked){toast('ফোন নম্বর ও সম্মতি প্রয়োজন।');return;}}else if(currentMode==='correction'){data.action='editRequest';data.changes={};$('editFields').querySelectorAll('[data-edit-key]').forEach(el=>data.changes[el.dataset.editKey]=el.value.trim());if(!Object.keys(data.changes).length){toast('সংশোধনের মতো কোনো তথ্য পাওয়া যায়নি।');return;}}else{data.action='removalRequest';data.reason=$('remarksInput').value.trim()||'এই সদস্যের তথ্য তালিকা থেকে বাদ দেওয়ার অনুরোধ।';} $('submitBtn').disabled=true;$('formStatus').textContent=currentMode==='phone'?'ফোন নম্বর যুক্ত হচ্ছে…':'অনুরোধ জমা হচ্ছে…';try{const r=await post(data);$('formStatus').textContent=r.message||'';if(r.success){toast(r.message);if(currentMode==='phone'){await initHeroVideo();
+loadData();}setTimeout(closeModal,900);}}catch(e){$('formStatus').textContent=e.message;}finally{$('submitBtn').disabled=false;}}
 async function requestRemoval(id){const s=students.find(x=>x.id===String(id));if(!s||window.pendingRemoval?.has(String(id)))return;if(!confirm(`${s.name} — এই তথ্য বাদ দেওয়ার অনুরোধ Admin-এর কাছে পাঠাবেন? অনুমোদন না হওয়া পর্যন্ত Row-তে দাগ থাকবে।`))return;const b=$(`rows`).querySelector(`[data-action="remove"][data-id="${CSS.escape(String(id))}"]`);if(b)b.disabled=true;try{const r=await post({action:'removalRequest',serial:s.id,name:s.name,reason:'এই সদস্যের তথ্য তালিকা থেকে বাদ দেওয়ার অনুরোধ।'});toast(r.message||'অনুরোধ পাঠানো হয়েছে।');if(r.success){window.pendingRemoval=window.pendingRemoval||new Set();window.pendingRemoval.add(String(id));render();}}catch(e){toast(e.message);if(b)b.disabled=false;}}
 function closeModal(){$('modal').classList.remove('show');}
 function openAdmin(){$('adminModal').classList.add('show');}
 function closeAdmin(){$('adminModal').classList.remove('show');}
 async function loadRequests(){adminPin=$('adminPin').value.trim();if(!adminPin){$('adminStatus').textContent='Admin PIN দিন।';return;}$('adminStatus').textContent='Request লোড হচ্ছে…';try{const r=await post({action:'adminList',pin:adminPin});if(!r.success)throw new Error(r.message);$('adminLogin').classList.add('hidden');$('requestList').classList.remove('hidden');$('requestList').innerHTML=(r.requests||[]).length?r.requests.map(x=>`<div class="admin-card"><strong>${esc(x.name)} · #${esc(x.serial)}</strong><p>ধরন: ${x.type==='PHONE'?'ফোন নম্বর':x.type==='REMOVAL'?'বাদ দেওয়ার অনুরোধ':'তথ্য সংশোধন'}</p>${x.phone?`<p>নম্বর: <b>${esc(x.phone)}</b></p>`:''}${x.changes&&Object.keys(x.changes).length?`<p><b>প্রস্তাবিত পরিবর্তন:</b></p>${Object.entries(x.changes).map(([k,v])=>`<p>${esc(k)}: <b>${esc(v)}</b></p>`).join('')}`:''}<p>বিবরণ: ${esc(x.reason||'—')}</p><p class="notice">${esc(x.time||'')}</p><div class="decision"><button class="btn primary" data-decision="APPROVE" data-id="${esc(x.requestId)}">Approve</button><button class="btn red" data-decision="REJECT" data-id="${esc(x.requestId)}">Reject</button></div></div>`).join(''):'<p>কোনো Pending request নেই।</p>';$('adminStatus').textContent=`${(r.requests||[]).length}টি Pending request`;}catch(e){$('adminStatus').textContent=e.message;}}
-async function review(id,decision){if(!confirm('এই সিদ্ধান্তটি নিশ্চিত করবেন?'))return;try{const r=await post({action:'adminDecision',pin:adminPin,requestId:id,decision});toast(r.message);if(r.success){await loadRequests();await loadData();}}catch(e){toast(e.message);}}
+async function review(id,decision){if(!confirm('এই সিদ্ধান্তটি নিশ্চিত করবেন?'))return;try{const r=await post({action:'adminDecision',pin:adminPin,requestId:id,decision});toast(r.message);if(r.success){await loadRequests();await initHeroVideo();
+loadData();}}catch(e){toast(e.message);}}
 $('search').addEventListener('input',render);$('villageFilter').addEventListener('change',render);
 $('rows').addEventListener('click',e=>{const b=e.target.closest('[data-action]');if(!b)return;if(b.dataset.action==='remove')requestRemoval(b.dataset.id);else openModal(b.dataset.action,b.dataset.id);});
 $('addPhone').addEventListener('click',()=>openModal('phone'));$('closeModal').addEventListener('click',closeModal);$('cancelModal').addEventListener('click',closeModal);$('submitBtn').addEventListener('click',submitForm);
 $('adminOpen').textContent='Admin Panel';$('adminOpen').addEventListener('click',openAdmin);$('closeAdmin').addEventListener('click',closeAdmin);$('loadRequests').addEventListener('click',loadRequests);
 $('requestList').addEventListener('click',e=>{const b=e.target.closest('[data-decision]');if(b)review(b.dataset.id,b.dataset.decision);});
 $('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeModal();});$('adminModal').addEventListener('click',e=>{if(e.target===$('adminModal'))closeAdmin();});
+initHeroVideo();
 loadData();
 </script>
 </body></html>
